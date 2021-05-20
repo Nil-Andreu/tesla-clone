@@ -1,57 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, {useState} from 'react';
 import './App.css';
 
+import Header from './components/Header.jsx';
+import Home from './components/Home.jsx';
+import Sidebar from './components/Sidebar/Sidebar.jsx'
+
+import {
+  BrowserRouter as Router, Route, Switch
+} from 'react-router-dom'
+
 function App() {
+  //Create a state of the sidebar. By default, this state is false
+  const [isOpen, setIsOpen] = useState(false)
+
+  // On the click, gonna change the state
+  const toggle = () => {
+    //Change the state of the openned
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Router>
+        <Header toggle={toggle}/>
+        <Sidebar isOpen={isOpen} toggle={toggle}/>
+        
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Route exact path="/login/">
+          </Route>
+        </Switch>
+
+      </Router>
     </div>
+    
   );
 }
 
