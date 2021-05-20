@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import * as THREE from "three";
 // import * as dat from "dat.gui";
-import cross from '../../textures/cross.png';
+// import cross from '../../textures/cross.png'; As used for the particles
 
 
 export default class CircularCylinder extends Component {
   componentDidMount() {
-    //Texture loader
-    const crossmap = new THREE.TextureLoader().load(cross);
+    //Texture loader for the particles
+    // const crossmap = new THREE.TextureLoader().load(cross);
 
     // Create the scene, which needs to be created always
     const scene = new THREE.Scene();
@@ -16,7 +16,8 @@ export default class CircularCylinder extends Component {
     // Create the object, the body of it
     const geometry = new THREE.TorusGeometry(.7, .2, 12, 80); 
 
-    const particlesGeometry = new THREE.BufferGeometry();
+    //Comment the particles part
+    /*const particlesGeometry = new THREE.BufferGeometry();
     const particlesCnt = 2000; //How many particles we want in the background
 
     const posArray = new Float32Array(particlesCnt * 3); //Position array of x, y and z for each particle: xyz, xyz, ...
@@ -27,7 +28,8 @@ export default class CircularCylinder extends Component {
         posArray[i] = (Math.random() - 0.5) * (Math.random() * 5) //To align to the center and multiply by random number so there are more disperse
     }
 
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3)) //To the particle geometry, we add a position attribute where we assign each of the pos array values (3 as xyz)
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3)) //To the particle geometry, we add a position attribute where we assign each of the pos array values (3 as xyz)*/
+    
     // Debuguer
     // const gui = new dat.GUI()
 
@@ -36,18 +38,18 @@ export default class CircularCylinder extends Component {
     }); //For creating particles (points) in the geometry. Where the size is the size of each point.
     material.color = new THREE.Color(0xffffff);
 
-    const particlesMaterial = new THREE.PointsMaterial({
+    /*const particlesMaterial = new THREE.PointsMaterial({
         size: 0.005,
         map: crossmap,
         transparent: true,
         // color: 'blue', for the color of particles
         // blending: THREE.AdditiveBlending
-    });
+    });^*/
 
     // Mesh the geometry and then the material to join the
     const sphere = new THREE.Points(geometry, material);
-    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(sphere, particlesMesh); //And add sphere and the particles
+    //const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(sphere); //And add sphere and the particles in the case we use it
 
 
     // Light 1 (is the one we will use as default)
@@ -99,8 +101,8 @@ export default class CircularCylinder extends Component {
 
     this.mount.appendChild(renderer.domElement);
 
-
-    let mouseX = 0;
+    // Comment as it is used for particles
+    /*let mouseX = 0;
     let mouseY = 0;
 
     function animateParticles(event) {
@@ -108,7 +110,7 @@ export default class CircularCylinder extends Component {
         mouseX = event.clientX
     }
 
-    document.addEventListener('mousemove', animateParticles)
+    document.addEventListener('mousemove', animateParticles)*/
 
     //Animation
     const clock = new THREE.Clock();
@@ -117,12 +119,13 @@ export default class CircularCylinder extends Component {
 
       const elapsedTime = clock.getElapsedTime();
 
-      particlesMesh.rotation.y = -.1 * elapsedTime
+      // Comment for the particles
+      /*particlesMesh.rotation.y = -.1 * elapsedTime
 
       if (mouseX > 0) {
           particlesMesh.rotation.y = mouseX * (elapsedTime * 0.00005)
           particlesMesh.rotation.x = - mouseY * (elapsedTime * 0.00005)
-      } //For solving when the mouse is not moving
+      } //For solving when the mouse is not moving*/
       
       //Update the objects
       sphere.rotation.y = 0.5 * elapsedTime;

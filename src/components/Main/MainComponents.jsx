@@ -25,7 +25,7 @@ export const Title = styled.h1`
     color: white;
     text-align: center;
     font-family: 'Fira Sans', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     display: flex;
     flex-direction: column;
 
