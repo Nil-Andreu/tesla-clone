@@ -1,5 +1,4 @@
-## Savitar Technologies
+## Tesla Clone
 
-- How it works --> dashboard created & gsap
-- Folders for subcomponents (whatpage)
-- Why separate card and the props in a js file (as liceo)
+This project is going to be a clone of the Tesla web application.
+It will hnadle the user authentification with the gmail and Google Auth of Firebase. As well as will be using Redux for handling the state.
