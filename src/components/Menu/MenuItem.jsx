@@ -19,9 +19,9 @@ const Container = styled.div`
 
     h4 {
         font-weight: 500;
-        letter-spacing: 0.5 px;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
-        padding: 0px 10px 15px 0px;
+        padding: 0px 0px 15px 10px;
         font-size: 15px;
         cursor: pointer;
     }
