@@ -33,7 +33,8 @@ export const LinkContainer = styled.div`
     //We can target the Link as if it is a anchor tag
     color: black;
     text-transform: uppercase;
-    font-weight: 15px;
+    font-weight: 500;
+    font-size: 15px;
     text-decoration: none;
   }
 `;

@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Router>
-      <Header isOpen = {isOpen} setIsOpen={setIsOpen} />    
+      <Header isOpen={isOpen} setIsOpen={setIsOpen} />    
 
       <Switch>
         <Route path="/"/>

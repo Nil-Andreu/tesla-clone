@@ -8,7 +8,7 @@ import {CloseIcon} from '@material-ui/icons/Close'
 import { Container, LogoContainer, Img, LinkContainer, Sidebar } from "./HeaderComponents";
 
 // Gonna use the arrow functions
-const Header = ({isOpen, setIsOpen}) => {
+function Header({isOpen, setIsOpen}){
   const changeOpen = () => {
     setIsOpen = !isOpen
   }
@@ -42,4 +42,4 @@ const Header = ({isOpen, setIsOpen}) => {
   );
 };
 
-export default Header;
+export default Header
