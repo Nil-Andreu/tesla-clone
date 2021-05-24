@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
   position: sticky; //Position sticks in the top (stays in the top)
   top: 0;
   left: 0;
@@ -10,15 +9,16 @@ export const Container = styled.div`
   z-index: 2; //So the heade appears always
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px 25px 25px;
+  padding: 25px;
+  padding-top: 15px;
 `;
 
-export const LogoContainer = styled.div``;
+export const LogoContainer = styled.div`
+  width: 90px;
+`;
 
 export const Img = styled.img`
   object-fit: contain;
-  width: 90px;
-  height: auto;
   margin-right: 100px;
   flex: 1; //So the image occupies as much space as possible
 `;
@@ -34,9 +34,24 @@ export const LinkContainer = styled.div`
     color: black;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
   }
 `;
 
-export const Sidebar = styled.div``;
+export const Sidebar = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 15px;
+  width: 400px;
+  margin-left: 10px;
+
+  a {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+  }
+`;
