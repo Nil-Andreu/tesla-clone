@@ -36,3 +36,7 @@ body {
     transform: translateY(0px);
   }
 }
+
+.hidden_side {
+  visibility: hidden; /*To hide this when the sidebar is open*/
+}

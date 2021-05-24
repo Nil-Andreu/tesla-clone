@@ -38,8 +38,8 @@ const Header = ({isOpen, setIsOpen}) => {
         <Link to="/">Solar Panel</Link>
       </LinkContainer>
       <Sidebar>
-        <Link to="/">Shop</Link>
-        <Link to="/login">Tesla Account</Link>
+        <Link to="/" className={isOpen && "hidden_side"}>Shop</Link>
+        <Link to="/login" className={isOpen && "hidden_side"}>Tesla Account</Link>
 
         <Menu onClick={changeOpen}>{isOpen ? <CloseIcon /> : <MenuIcon />}</Menu>
       </Sidebar>
@@ -47,4 +47,5 @@ const Header = ({isOpen, setIsOpen}) => {
   );
 };
 
+// The hidden side class is defined in App.css, and will be applied hwen the sidebar is open so it is not above it
 export default Header;
