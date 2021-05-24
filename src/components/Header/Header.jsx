@@ -10,12 +10,13 @@ import {
   Img,
   LinkContainer,
   Sidebar,
+  Menu
 } from "./HeaderComponents";
 
-// Gonna use the arrow functions
-const Header = (isOpen, setIsOpen) => {
+// Gonna use the arrow functions. In this arrow we could pass the properties ass props, or each in an object list
+const Header = ({isOpen, setIsOpen}) => {
   const changeOpen = () => {
-    setIsOpen = !isOpen;
+    setIsOpen(!isOpen)
   };
 
   return (
@@ -40,7 +41,7 @@ const Header = (isOpen, setIsOpen) => {
         <Link to="/">Shop</Link>
         <Link to="/login">Tesla Account</Link>
 
-        <div onClick={changeOpen}>{isOpen ? <MenuIcon /> : <CloseIcon />}</div>
+        <Menu onClick={changeOpen}>{isOpen ? <CloseIcon /> : <MenuIcon />}</Menu>
       </Sidebar>
     </Container>
   );

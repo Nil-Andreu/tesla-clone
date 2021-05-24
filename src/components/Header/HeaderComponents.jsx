@@ -27,6 +27,7 @@ export const LinkContainer = styled.div`
   display: flex;
   gap: 15px; //This gives the margin of the children
   text-decoration: none;
+  width: 40vw;
   color: black;
 
   a {
@@ -34,24 +35,34 @@ export const LinkContainer = styled.div`
     color: black;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
     text-decoration: none;
   }
 `;
 
 export const Sidebar = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   gap: 15px;
-  width: 400px;
-  margin-left: 10px;
+  width: 24vw;
 
   a {
     color: black;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
     text-decoration: none;
+    z-index: 0;
+    position: relative;
   }
+`;
+
+export const Menu = styled.div`
+    .MuiSvgIcon-root {
+        // This class is given by the material ui
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+    }
 `;
