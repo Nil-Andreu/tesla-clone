@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 
-import { Container, LogoContainer, Img } from "./HeaderComponents";
+// To import the menu icons, from the material-ui we can see cool ones
+import {MenuIcon} from '@material-ui/icons/Menu'
+import {CloseIcon} from '@material-ui/icons/Close'
+
+
+import { Container, LogoContainer, Img, LinkContainer, Sidebar } from "./HeaderComponents";
 
 // Gonna use the arrow functions
-const Header = () => {
+const Header = ({isOpen, setIsOpen}) => {
+  const changeOpen = () => {
+    setIsOpen = !isOpen
+  }
+
   return (
     <Container>
       <LogoContainer>
@@ -14,6 +23,21 @@ const Header = () => {
           />
         </Link>
       </LogoContainer>
+      <LinkContainer>
+        <Link to="/">Model S</Link>
+        <Link to="/">Model 3</Link>
+        <Link to="/">Model x</Link>
+        <Link to="/">Model Y</Link>
+        <Link to="/">Solar Roof</Link>
+        <Link to="/">Solar Panel</Link>
+      </LinkContainer>
+      <Sidebar>
+        <Link to="/">Shop</Link>
+        <Link to="/login">Tesla Account</Link>
+      </Sidebar>
+      <div onClick={changeOpen}>
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
+      </div>
     </Container>
   );
 };
