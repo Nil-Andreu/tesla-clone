@@ -58,7 +58,7 @@ export const Sidebar = styled.div`
   }
 `;
 
-export const Menu = styled.div`
+export const MenuDiv = styled.div`
     .MuiSvgIcon-root {
         // This class is given by the material ui
         position: relative;

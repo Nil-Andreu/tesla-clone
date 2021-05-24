@@ -10,7 +10,7 @@ import {
   Img,
   LinkContainer,
   Sidebar,
-  Menu
+  MenuDiv
 } from "./HeaderComponents";
 
 // Gonna use the arrow functions. In this arrow we could pass the properties ass props, or each in an object list
@@ -41,7 +41,7 @@ const Header = ({isOpen, setIsOpen}) => {
         <Link to="/" className={isOpen && "hidden_side"}>Shop</Link>
         <Link to="/login" className={isOpen && "hidden_side"}>Tesla Account</Link>
 
-        <Menu onClick={changeOpen}>{isOpen ? <CloseIcon /> : <MenuIcon />}</Menu>
+        <MenuDiv onClick={changeOpen}>{isOpen ? <CloseIcon /> : <MenuIcon />}</MenuDiv>
       </Sidebar>
     </Container>
   );
