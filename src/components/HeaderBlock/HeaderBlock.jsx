@@ -1,15 +1,19 @@
 import React from 'react'
-import { Container, HeaderBlockInfo, HeaderBlockInfoText } from './HeaderBlockComponents'
+import { Actions, Container, Info, Text } from './HeaderBlockComponents'
 
 function HeaderBlock() {
     return (
         <Container>
-            <HeaderBlockInfo >
-                <HeaderBlockInfoText>
+            <Info >
+                <Info>
                     <h1>Model 3</h1>
                     <h4>Order Online for <span> Touchless Delivery </span></h4>
-                </HeaderBlockInfoText>
-            </HeaderBlockInfo>
+                </Info>
+                <Actions>
+                    <PrimaryButton>Custom Order</PrimaryButton>
+                    <SecondaryButton>Existing Inventory</SecondaryButton>
+                </Actions>
+            </Info>
         </Container>
     )
 }
