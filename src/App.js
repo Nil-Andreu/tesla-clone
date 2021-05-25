@@ -4,8 +4,8 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Header from './components/Header/Header.jsx'
-import Menu from './components/Menu/Menu';
-import HeaderBlock from './components/HeaderBlock/HeaderBlock';
+import Menu from './components/Menu/Menu.jsx';
+import HeaderBlock from './components/HeaderBlock/HeaderBlock.jsx';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
