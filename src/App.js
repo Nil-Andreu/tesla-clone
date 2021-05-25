@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Header from './components/Header/Header.jsx'
 import Menu from './components/Menu/Menu';
+import HeaderBlock from './components/HeaderBlock/HeaderBlock';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <Header isOpen={isOpen} setIsOpen={setIsOpen} /> 
       {isOpen && <Menu/> }
+      <HeaderBlock />
 
       <Switch>
         <Route path="/"/>
