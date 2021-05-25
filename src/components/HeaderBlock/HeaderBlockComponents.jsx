@@ -14,6 +14,7 @@ export const Container = styled.div`
   left: 0;
   display: grid;
   place-items: center;
+  z-index: 0;
 `;
 
 export const Info = styled.div`
@@ -53,6 +54,7 @@ export const Text = styled.div`
 export const Actions = styled.div`
   margin-top: 330px;
   display: flex;
+  justify-content: center;
   gap: 20px;
 
   button {
