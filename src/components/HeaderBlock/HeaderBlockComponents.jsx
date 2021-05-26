@@ -2,19 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: url("https://tesla.com/ns_videos/model-3-social.jpg") no-repeat
-    center center fixed;
+    center center fixed; // If we search for perfect background image, we will see a font where it tells this code
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  position: absolute;
+  position: absolute; //To position absolutely in the viewport
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  display: grid;
-  place-items: center;
-  z-index: 0;
+  display: grid; //Display grid is the same as saying display flex, and flex direction column
+  place-items: center; //Places the items at the center, the same as saying both justify-items and align-items center
 `;
 
 export const Info = styled.div`
@@ -36,6 +35,7 @@ export const Text = styled.div`
     font-weight: 400;
     font-size: 15px;
     color: #5c5e62;
+    
     span {
       padding-bottom: 4px;
       padding-top: 15px;
@@ -67,6 +67,10 @@ export const Actions = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     outline: none;
+
+    &:hover{
+        transform: scale(1.05);
+    }
   }
 `;
 
