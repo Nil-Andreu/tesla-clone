@@ -35,7 +35,7 @@ export const LinkContainer = styled.div`
     color: black;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 13px;
     text-decoration: none;
   }
 `;
@@ -51,7 +51,7 @@ export const Sidebar = styled.div`
     color: black;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 13px;
     text-decoration: none;
     z-index: 0;
     position: relative;
