@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import {Container, Header, Logo, Language} from './LoginComponents'
+import {Container, Header, Logo, Language, Label} from './LoginComponents'
 
 import LanguageOutLinedIcon from '@material-ui/icons/LanguageOutlined'
 
 function Login() {
+    const [email, emailChange] = useState('')
+
+    const setEmail = (e) => {
+        emailChange(e.target.value) 
+    }
+
     return (
         <Container>
             <Header>
@@ -18,8 +24,20 @@ function Login() {
                     <span>es-SP</span>
                 </Language>
             </Header>
+            <Information>
+                <h1>Sign In</h1>
+                <form>
+                    <Label htmlFor="email">
+                        Email Address
+                    </Label>
+                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </form>
+            </Information>
         </Container>
     )
 }
+
+// In th eform, the value is important and what we will actually do is for the input register on change the value
+// The e.target.value gets the value that the user is putting
 
 export default Login
