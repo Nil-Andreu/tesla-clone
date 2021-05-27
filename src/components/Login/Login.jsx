@@ -6,9 +6,14 @@ import LanguageOutLinedIcon from '@material-ui/icons/LanguageOutlined'
 
 function Login() {
     const [email, emailChange] = useState('')
+    const [password, passwordChange] = useState('')
 
     const setEmail = (e) => {
         emailChange(e.target.value) 
+    }
+
+    const setPassword = (e) => {
+        passwordChange(e.target.value)
     }
 
     return (
@@ -31,6 +36,10 @@ function Login() {
                         Email Address
                     </Label>
                     <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <Label htmlFor="email">
+                        Password
+                    </Label>
+                    <input type="password" id="email" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </form>
             </Information>
         </Container>
