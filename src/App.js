@@ -15,12 +15,12 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
             <Header isOpen={isOpen} setIsOpen={setIsOpen} /> 
             {isOpen && <Menu/> }
             <HeaderBlock />
           </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login />
         </Route>
 
