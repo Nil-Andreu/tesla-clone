@@ -6,8 +6,10 @@ import {
   Logo,
   Language,
   Label,
-  Information,
+  Information
 } from "./LoginComponents";
+
+import buttonPrimary from './buttonPrimary.jsx';
 
 import LanguageOutLinedIcon from "@material-ui/icons/LanguageOutlined";
 
@@ -51,7 +53,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <buttonPrimary name="Sign In" type="submit"></buttonPrimary>
+        <buttonPrimary name="Sign In" type="submit" onClick={signIn} />
       </Information>
     </Container>
   );
@@ -59,5 +61,6 @@ function Login() {
 
 // In th eform, the value is important and what we will actually do is for the input register on change the value
 // The e.target.value gets the value that the user is putting. The e is for the event, and target is what the event is doing
+// When we click the button, we want to actually sign in the user
 
 export default Login;
